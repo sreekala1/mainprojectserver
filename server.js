@@ -23,13 +23,13 @@ var cors = require('cors')
 
 var corsOptions = {
   // origin: 'http://localhost:5173',
-  origin: 'https://clientp-three.vercel.app',
+  origin: process.env.CLIENT_URL,
 }
 
 app.use(cors(corsOptions))
 app.use(express.json())
 app.get("/", (req, res) => {
-  res.send("Server is running 🚀");
+  res.send("Server is running properly");
 });
 
 app.use("", moviesRouter)
