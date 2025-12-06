@@ -18,7 +18,7 @@ router.get("/", staticResponseController)
 router.get("/movies-list", moviesListController)
 router.get("/movies-list/:id", moviesDetailController)
 
-router.put("/movies-rating", editRatingController)
+router.put("/movies-rating", authenticationMiddleware, editRatingController)
 
 router.delete("/movies-delete", deleteMovieController)
 
